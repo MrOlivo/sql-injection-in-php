@@ -43,8 +43,8 @@ if ( ! defined('SQL_INJECTION_IN_PHP' ) ) {
 	}
 
 	$page  = $_GET['page'] ?? 1;
-	$query .= $filters . ' LIMIT 5 OFFSET :page';
-	$parameters['page'] = ( $page - 1 ) * 5;
+	$query .= $filters . ' LIMIT 10 OFFSET :page';
+	$parameters['page'] = ( $page - 1 ) * 10;
 
 	$prepared_query = $pdo->prepare( $query );
 
@@ -57,7 +57,7 @@ if ( ! defined('SQL_INJECTION_IN_PHP' ) ) {
 	$count_query = $count_prepared_query->fetchAll();
 
 	$count_result = $count_query ? $count_query[0]['num_rows'] : 0;
-	$num_pages = ( $count_result / 5 ) + ( ( $count_result % 5 ) ? 1 : 0 );
+	$num_pages = ( $count_result / 10 ) + ( ( $count_result % 10 ) ? 1 : 0 );
 
 
 	?>
