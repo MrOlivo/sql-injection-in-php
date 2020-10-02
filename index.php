@@ -1,4 +1,4 @@
 <?php
 
-header('Location: manageStudent.php');
+header('Location: manageStudentSafe.php');
 die();
