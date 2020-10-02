@@ -43,7 +43,7 @@ if ( isset( $_GET['first_name'], $_GET['last_name'], $_GET['birth_date'] ) ) {
 	<hr/>
 	<form method="get">
 		<input type="hidden" name="action" value="update"/>
-		<input type="hidden" name="id" value="<?= $_GET['id'] ?>"
+		<input type="hidden" name="id" value="<?= $_GET['id'] ?>"/>
 		<label>
 			First name:
 			<input type="text" name="first_name" value="<?= $row['first_name'] ?>"/>
